@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.oulam.dao.FMFormMapper" >
+  <resultMap id="BaseResultMap" type="com.oulam.bean.FMForm" >
+    <id column="f_id" property="fId" jdbcType="BIGINT" />
+    <result column="f_messgae" property="fMessgae" jdbcType="VARCHAR" />
+    <result column="f_material" property="fMaterial" jdbcType="VARCHAR" />
+    <result column="f_inno_material" property="fInnoMaterial" jdbcType="VARCHAR" />
+    <result column="f_ temp" property="fTemp" jdbcType="VARCHAR" />
+    <result column="f_media" property="fMedia" jdbcType="VARCHAR" />
+    <result column="f_num" property="fNum" jdbcType="INTEGER" />
+    <result column="f_address" property="fAddress" jdbcType="VARCHAR" />
+    <result column="f_explain" property="fExplain" jdbcType="VARCHAR" />
+    <result column="f_file" property="fFile" jdbcType="VARCHAR" />
+    <result column="f_ask_way" property="fAskWay" jdbcType="VARCHAR" />
+    <result column="f_ask_form" property="fAskForm" jdbcType="VARCHAR" />
+    <result column="f_date" property="fDate" jdbcType="TIMESTAMP" />
+    <result column="f_pay_way" property="fPayWay" jdbcType="VARCHAR" />
+    <result column="f_yourname" property="fYourname" jdbcType="VARCHAR" />
+    <result column="f_yourphone" property="fYourphone" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    f_id, f_messgae, f_material, f_inno_material, "f_ temp", f_media, f_num, f_address, 
+    f_explain, f_file, f_ask_way, f_ask_form, f_date, f_pay_way, f_yourname, f_yourphone
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from fameng
+    where f_id = #{fId,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from fameng
+    where f_id = #{fId,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.oulam.bean.FMForm" >
+    insert into fameng (f_id, f_messgae, f_material, 
+      f_inno_material, "f_ temp", f_media, 
+      f_num, f_address, f_explain, 
+      f_file, f_ask_way, f_ask_form, 
+      f_date, f_pay_way, f_yourname, 
+      f_yourphone)
+    values (#{fId,jdbcType=BIGINT}, #{fMessgae,jdbcType=VARCHAR}, #{fMaterial,jdbcType=VARCHAR}, 
+      #{fInnoMaterial,jdbcType=VARCHAR}, #{fTemp,jdbcType=VARCHAR}, #{fMedia,jdbcType=VARCHAR}, 
+      #{fNum,jdbcType=INTEGER}, #{fAddress,jdbcType=VARCHAR}, #{fExplain,jdbcType=VARCHAR}, 
+      #{fFile,jdbcType=VARCHAR}, #{fAskWay,jdbcType=VARCHAR}, #{fAskForm,jdbcType=VARCHAR}, 
+      #{fDate,jdbcType=TIMESTAMP}, #{fPayWay,jdbcType=VARCHAR}, #{fYourname,jdbcType=VARCHAR}, 
+      #{fYourphone,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.oulam.bean.FMForm" >
+    insert into fameng
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="fId != null" >
+        f_id,
+      </if>
+      <if test="fMessgae != null" >
+        f_messgae,
+      </if>
+      <if test="fMaterial != null" >
+        f_material,
+      </if>
+      <if test="fInnoMaterial != null" >
+        f_inno_material,
+      </if>
+      <if test="fTemp != null" >
+        "f_ temp",
+      </if>
+      <if test="fMedia != null" >
+        f_media,
+      </if>
+      <if test="fNum != null" >
+        f_num,
+      </if>
+      <if test="fAddress != null" >
+        f_address,
+      </if>
+      <if test="fExplain != null" >
+        f_explain,
+      </if>
+      <if test="fFile != null" >
+        f_file,
+      </if>
+      <if test="fAskWay != null" >
+        f_ask_way,
+      </if>
+      <if test="fAskForm != null" >
+        f_ask_form,
+      </if>
+      <if test="fDate != null" >
+        f_date,
+      </if>
+      <if test="fPayWay != null" >
+        f_pay_way,
+      </if>
+      <if test="fYourname != null" >
+        f_yourname,
+      </if>
+      <if test="fYourphone != null" >
+        f_yourphone,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="fId != null" >
+        #{fId,jdbcType=BIGINT},
+      </if>
+      <if test="fMessgae != null" >
+        #{fMessgae,jdbcType=VARCHAR},
+      </if>
+      <if test="fMaterial != null" >
+        #{fMaterial,jdbcType=VARCHAR},
+      </if>
+      <if test="fInnoMaterial != null" >
+        #{fInnoMaterial,jdbcType=VARCHAR},
+      </if>
+      <if test="fTemp != null" >
+        #{fTemp,jdbcType=VARCHAR},
+      </if>
+      <if test="fMedia != null" >
+        #{fMedia,jdbcType=VARCHAR},
+      </if>
+      <if test="fNum != null" >
+        #{fNum,jdbcType=INTEGER},
+      </if>
+      <if test="fAddress != null" >
+        #{fAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="fExplain != null" >
+        #{fExplain,jdbcType=VARCHAR},
+      </if>
+      <if test="fFile != null" >
+        #{fFile,jdbcType=VARCHAR},
+      </if>
+      <if test="fAskWay != null" >
+        #{fAskWay,jdbcType=VARCHAR},
+      </if>
+      <if test="fAskForm != null" >
+        #{fAskForm,jdbcType=VARCHAR},
+      </if>
+      <if test="fDate != null" >
+        #{fDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="fPayWay != null" >
+        #{fPayWay,jdbcType=VARCHAR},
+      </if>
+      <if test="fYourname != null" >
+        #{fYourname,jdbcType=VARCHAR},
+      </if>
+      <if test="fYourphone != null" >
+        #{fYourphone,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.oulam.bean.FMForm" >
+    update fameng
+    <set >
+      <if test="fMessgae != null" >
+        f_messgae = #{fMessgae,jdbcType=VARCHAR},
+      </if>
+      <if test="fMaterial != null" >
+        f_material = #{fMaterial,jdbcType=VARCHAR},
+      </if>
+      <if test="fInnoMaterial != null" >
+        f_inno_material = #{fInnoMaterial,jdbcType=VARCHAR},
+      </if>
+      <if test="fTemp != null" >
+        "f_ temp" = #{fTemp,jdbcType=VARCHAR},
+      </if>
+      <if test="fMedia != null" >
+        f_media = #{fMedia,jdbcType=VARCHAR},
+      </if>
+      <if test="fNum != null" >
+        f_num = #{fNum,jdbcType=INTEGER},
+      </if>
+      <if test="fAddress != null" >
+        f_address = #{fAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="fExplain != null" >
+        f_explain = #{fExplain,jdbcType=VARCHAR},
+      </if>
+      <if test="fFile != null" >
+        f_file = #{fFile,jdbcType=VARCHAR},
+      </if>
+      <if test="fAskWay != null" >
+        f_ask_way = #{fAskWay,jdbcType=VARCHAR},
+      </if>
+      <if test="fAskForm != null" >
+        f_ask_form = #{fAskForm,jdbcType=VARCHAR},
+      </if>
+      <if test="fDate != null" >
+        f_date = #{fDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="fPayWay != null" >
+        f_pay_way = #{fPayWay,jdbcType=VARCHAR},
+      </if>
+      <if test="fYourname != null" >
+        f_yourname = #{fYourname,jdbcType=VARCHAR},
+      </if>
+      <if test="fYourphone != null" >
+        f_yourphone = #{fYourphone,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where f_id = #{fId,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.oulam.bean.FMForm" >
+    update fameng
+    set f_messgae = #{fMessgae,jdbcType=VARCHAR},
+      f_material = #{fMaterial,jdbcType=VARCHAR},
+      f_inno_material = #{fInnoMaterial,jdbcType=VARCHAR},
+      "f_ temp" = #{fTemp,jdbcType=VARCHAR},
+      f_media = #{fMedia,jdbcType=VARCHAR},
+      f_num = #{fNum,jdbcType=INTEGER},
+      f_address = #{fAddress,jdbcType=VARCHAR},
+      f_explain = #{fExplain,jdbcType=VARCHAR},
+      f_file = #{fFile,jdbcType=VARCHAR},
+      f_ask_way = #{fAskWay,jdbcType=VARCHAR},
+      f_ask_form = #{fAskForm,jdbcType=VARCHAR},
+      f_date = #{fDate,jdbcType=TIMESTAMP},
+      f_pay_way = #{fPayWay,jdbcType=VARCHAR},
+      f_yourname = #{fYourname,jdbcType=VARCHAR},
+      f_yourphone = #{fYourphone,jdbcType=VARCHAR}
+    where f_id = #{fId,jdbcType=BIGINT}
+  </update>
+</mapper>
