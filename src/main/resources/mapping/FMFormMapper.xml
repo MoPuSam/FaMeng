@@ -6,7 +6,7 @@
     <result column="f_messgae" property="fMessgae" jdbcType="VARCHAR" />
     <result column="f_material" property="fMaterial" jdbcType="VARCHAR" />
     <result column="f_inno_material" property="fInnoMaterial" jdbcType="VARCHAR" />
-    <result column="f_ temp" property="fTemp" jdbcType="VARCHAR" />
+    <result column="f_temp" property="fTemp" jdbcType="VARCHAR" />
     <result column="f_media" property="fMedia" jdbcType="VARCHAR" />
     <result column="f_num" property="fNum" jdbcType="INTEGER" />
     <result column="f_address" property="fAddress" jdbcType="VARCHAR" />
@@ -20,7 +20,7 @@
     <result column="f_yourphone" property="fYourphone" jdbcType="VARCHAR" />
   </resultMap>
   <sql id="Base_Column_List" >
-    f_id, f_messgae, f_material, f_inno_material, "f_ temp", f_media, f_num, f_address, 
+    f_id, f_messgae, f_material, f_inno_material, f_temp, f_media, f_num, f_address, 
     f_explain, f_file, f_ask_way, f_ask_form, f_date, f_pay_way, f_yourname, f_yourphone
   </sql>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
@@ -35,7 +35,7 @@
   </delete>
   <insert id="insert" parameterType="com.oulam.bean.FMForm" >
     insert into fameng (f_id, f_messgae, f_material, 
-      f_inno_material, "f_ temp", f_media, 
+      f_inno_material, f_temp, f_media, 
       f_num, f_address, f_explain, 
       f_file, f_ask_way, f_ask_form, 
       f_date, f_pay_way, f_yourname, 
@@ -63,7 +63,7 @@
         f_inno_material,
       </if>
       <if test="fTemp != null" >
-        "f_ temp",
+        f_temp,
       </if>
       <if test="fMedia != null" >
         f_media,
@@ -163,7 +163,7 @@
         f_inno_material = #{fInnoMaterial,jdbcType=VARCHAR},
       </if>
       <if test="fTemp != null" >
-        "f_ temp" = #{fTemp,jdbcType=VARCHAR},
+        f_temp = #{fTemp,jdbcType=VARCHAR},
       </if>
       <if test="fMedia != null" >
         f_media = #{fMedia,jdbcType=VARCHAR},
@@ -206,7 +206,7 @@
     set f_messgae = #{fMessgae,jdbcType=VARCHAR},
       f_material = #{fMaterial,jdbcType=VARCHAR},
       f_inno_material = #{fInnoMaterial,jdbcType=VARCHAR},
-      "f_ temp" = #{fTemp,jdbcType=VARCHAR},
+      f_temp = #{fTemp,jdbcType=VARCHAR},
       f_media = #{fMedia,jdbcType=VARCHAR},
       f_num = #{fNum,jdbcType=INTEGER},
       f_address = #{fAddress,jdbcType=VARCHAR},

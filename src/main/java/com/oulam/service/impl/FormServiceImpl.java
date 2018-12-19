@@ -14,8 +14,7 @@ public class FormServiceImpl implements FormService{
     @Autowired
     FMFormMapper mapper;
 
-    @Override
     public int insert(FMForm form) {
-        return mapper.insert(form);
+        return mapper.insertSelective(form);
     }
 }
