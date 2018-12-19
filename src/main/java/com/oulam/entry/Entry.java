@@ -10,7 +10,6 @@ import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.boot.autoconfigure.web.MultipartAutoConfiguration;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.stereotype.Component;
 
@@ -25,7 +24,6 @@ import org.springframework.stereotype.Component;
 @ComponentScan("com.oulam")//扫描 @Controller、@Service 注解；
 @SpringBootApplication
 @EnableScheduling   //启动定时任务
-@EnableJpaRepositories(basePackages = "com.oulam.dao")//扫描 @Repository 注解；
 @MapperScan("com.oulam.dao")//将项目中对应的mapper类的路径加进来就可以了
 @EntityScan(basePackages = "com.oulam.bean")//扫描 @Entity 注解；
 public class Entry {
